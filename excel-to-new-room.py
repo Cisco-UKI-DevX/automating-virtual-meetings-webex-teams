@@ -30,7 +30,7 @@ import pandas as pd
 
 def createRoom(roomName):
     # Creates a new room with the name stored in roomName
-    url = "https://api.ciscospark.com/v1/rooms"
+    url = "https://webexapis.com/v1/rooms"
     payload = {"title": roomName}
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -44,7 +44,7 @@ def addUsers(user_emails, roomId):
     # Adds new users stored in user_emails
 
     for user_email in user_emails:
-        url = "https://api.ciscospark.com/v1/memberships"
+        url = "https://webexapis.com/v1/memberships"
         payload = {"roomId": roomId, "personEmail": user_email}
         headers = {
             "Authorization": token,  # Personal access token
@@ -55,7 +55,7 @@ def addUsers(user_emails, roomId):
 
 def sendMessage(message, roomId):
     # Sends a message to the new room
-    url = "https://api.ciscospark.com/v1/messages"
+    url = "https://webexapis.com/v1/messages"
     payload = {"roomId": roomId, "text": message}
     headers = {
         "Authorization": token,  # Personal access token
@@ -102,5 +102,5 @@ def main():
 
 
 if __name__ == "__main__":
-    token = "Bearer OTQzYjkzZTItNzhjMC00ZmE5LWE3MDktOGViMTM3YWIwYjcyMzFhY2Y1ZjUtM2Jj_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f"  # Personal access token
+    token = "Bearer <Enter Token here>"  # Personal access token
     main()
